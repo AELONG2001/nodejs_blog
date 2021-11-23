@@ -1,5 +1,5 @@
-@import 'variables';
-
-h1 {
-    color: $color;
-}
+@import './Components/card-course';
+@import './Components/navbar';
+@import './Components/user-avatar';
+@import './Components/button';
+@import './Components/stored-courses';

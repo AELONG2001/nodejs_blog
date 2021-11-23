@@ -1,0 +1,20 @@
+.btn-trash {
+    position: relative;
+    text-decoration: none;
+    &-icon {
+        font-size: 26px;
+        color: #3498db;
+        &__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+    }
+}
+
+.btn-add-icon {
+    font-size: 32px;
+    color: #198754;
+}

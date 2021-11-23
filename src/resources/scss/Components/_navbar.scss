@@ -1,0 +1,20 @@
+.navbar-nav {
+    &-list {
+        transform: translate(20px, 4px);
+    }
+    &-link {
+        font-size: 18px;
+        color: #fff !important;
+        &__dropdown {
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+                opacity: 0.9;
+                color: #f3ebeb !important;
+            }
+        }
+        &:hover {
+            color: #e6d9d9 !important;
+        }
+    }
+}
