@@ -1,6 +1,6 @@
 <div class="mt-4">
     <h3>Chỉnh Sửa Khóa Học</h3>
-    <form method="POST" action="/courses/{{course._id}}?_method=PUT">
+    <form method="POST" action="/courses/{{course._id}}?_method=PUT" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="name" class="form-label">Tên khóa học</label>
             <input type="text" class="form-control" value="{{course.name}}" name="name">
@@ -12,8 +12,8 @@
         </div>
 
          <div class="mb-3">
-            <label for="image" class="form-label">Link img</label>
-            <input type="text" class="form-control" value="{{course.file_course}}" name="file_course">
+            <label for="image" class="form-label">Tải lên ảnh của khóa học</label>
+            <input type="file" class="form-control" value="{{course.file_course}}" name="file_course">
         </div>
 
          <div class="mb-3">

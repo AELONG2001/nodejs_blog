@@ -42,7 +42,9 @@ class CourseControllers {
 
     //[PUT] /courses/:id
     update(req, res, next) {
-        Course.updateOne({ _id: req.params.id }, req.body)
+        var formData = req.body;
+        req.body.file_course = req.file.path.split('\\').slice(8).join('/');
+        Course.updateOne({ _id: req.params.id }, formData)
             .then(() => res.redirect('/me/stored/courses'))
             .catch(next);
     }

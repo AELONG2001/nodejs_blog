@@ -15,12 +15,10 @@
     </div>
 
     <div class="mt-4 d-flex align-items-center">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="check_all-btn">
-        <label class="form-check-label" for="check_all-btn">
-          Chọn tất cả
-        </label>
-      </div>
+
+       <div class="form-check" style="margin-bottom: 0">
+                    <input class="form-check-input" type="checkbox" value="" id="check_all-btn">
+                  </div>
 
       <div class="mx-3">
         <select class="form-control" name="action" required>
@@ -29,13 +27,16 @@
         </select>
       </div>
       
-      <button class="btn btn-primary btn-submit_form disabled">Thực hiện</button>
+      <button class="btn btn-primary disabled btn-submit_form">Thực hiện</button>
     </div>
 
     <table class="table mt-3">
         <thead>
             <tr>
-                <th scope="col"colspan="2">STT</th>
+                <th scope="col">
+                  STT
+                  {{{ sortable '_id' _sort }}}
+                </th>
                 <th scope="col">
                   Tên khóa học
                   {{{ sortable 'name' _sort }}}
@@ -57,10 +58,10 @@
                <td>
                   <input class="form-check-input" type="checkbox" value="{{this._id}}" name="courseIds[]">
                </td>
-                <th scope="row">{{sum @index 1}}</th>
+                <th scope="row">{{this._id}}</th>
                     <td>{{this.name}}</td>
                     <td>{{this.level}}</td>
-                    <td>{{this.createdAt}}</td>
+                    <td class="column_table-time">{{this.createdAt}}</td>
                     <td>
                         <a href="/courses/{{this._id}}/edit" class="btn btn-warning">Sửa</a>
                         <a href="" class="btn btn-danger" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#delete_course-modal">Xóa</a>
@@ -130,25 +131,24 @@
         }else {
           courseItemCheckbox.prop('checked', false)
         }
-        enableSubmitFormBtn()
+        enableSubmitForm()
       })
 
       //Course item checkbox change
       courseItemCheckbox.change(function() {
         const amountCheckedAll = courseItemCheckbox.length === $('input[name="courseIds[]"]:checked').length
         checkAllBtn.prop('checked', amountCheckedAll) //Đối số thứ hai là điều kiện để checkAll
-        enableSubmitFormBtn()
+        enableSubmitForm()
       })
 
-      //enable submitFormBtn when checked
-      function enableSubmitFormBtn() {
-        const checkedCount = $('input[name="courseIds[]"]:checked').length
-        if(checkedCount > 0) {
+      //enable submitForm when checked
+      function enableSubmitForm() {
+        const amountChecked = $('input[name="courseIds[]"]:checked').length
+        if(amountChecked > 0) {
           btnSubmitForm.removeClass('disabled')
         }else {
           btnSubmitForm.addClass('disabled')
         }
       }
-
     })
 </script>

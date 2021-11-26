@@ -10,7 +10,7 @@ router.post('/store', upload.single('file_course'), courseController.store);
 router.get('/:id/edit', courseController.edit);
 router.post('/handle-remove', courseController.handleRemoveChecked);
 router.post('/handle-restore-remove', courseController.handleRestoreAndRemove);
-router.put('/:id', courseController.update);
+router.put('/:id', upload.single('file_course'), courseController.update);
 router.patch('/:id/restore', courseController.restore);
 router.delete('/:id', courseController.delete);
 router.delete('/:id/force', courseController.forceDestroy);
