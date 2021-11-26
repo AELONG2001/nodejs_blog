@@ -5,7 +5,7 @@ const AutoIncrement = require('mongoose-sequence')(mongoose); //Auto Increment i
 
 const Schema = mongoose.Schema;
 
-const Course = new Schema(
+const CourseSchema = new Schema(
     {
         _id: { type: Number },
         name: { type: String, required: true },
@@ -21,12 +21,24 @@ const Course = new Schema(
     },
 );
 
+//Custom query helpers
+CourseSchema.query.sortable = function (req) {
+    if (req.query.hasOwnProperty('_sort')) {
+        const isValidType = ['asc', 'desc'].includes(req.query.type);
+        return this.sort({
+            [req.query.column]: isValidType ? req.query.type : 'desc',
+        });
+    }
+
+    return this;
+};
+
 //Add plugins
 mongoose.plugin(slug);
-Course.plugin(mongooseDelete, {
+CourseSchema.plugin(mongooseDelete, {
     deletedAt: true,
     overrideMethods: 'all',
 });
-Course.plugin(AutoIncrement);
+CourseSchema.plugin(AutoIncrement);
 
-module.exports = mongoose.model('Course', Course);
+module.exports = mongoose.model('Course', CourseSchema);

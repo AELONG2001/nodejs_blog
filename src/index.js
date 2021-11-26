@@ -38,35 +38,7 @@ app.use(logger('dev'));
 //Template engine
 const hbs = handlebars.create({
     extname: '.hbs',
-    helpers: {
-        sortable: (field, sort) => {
-            const sortType = field === sort.column ? sort.type : 'default';
-
-            const icons = {
-                default: 'bx bxs-sort-alt',
-                asc: 'bx bx-sort-up',
-                desc: 'bx bx-sort-down',
-            };
-
-            const icon = icons[sortType];
-
-            //=====
-
-            const types = {
-                default: 'asc',
-                asc: 'desc',
-                desc: 'asc',
-            };
-
-            const type = types[sortType];
-
-            return `
-                <a href="?_sort&column=${field}&type=${type}" class="text-decoration-none">
-                <i class="${icon}" style="transform: translateY(2px)"></i>
-                </a>
-            `;
-        },
-    },
+    helpers: require('./helpers/handlebars'),
 });
 
 app.engine('.hbs', hbs.engine);
