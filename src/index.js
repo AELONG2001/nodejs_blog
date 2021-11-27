@@ -4,6 +4,7 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
 const route = require('./routes');
+const Handlebars = require('Handlebars');
 
 const sortMiddleware = require('./app/middleware/SortMiddleware');
 
@@ -38,6 +39,41 @@ app.use(logger('dev'));
 //Template engine
 const hbs = handlebars.create({
     extname: '.hbs',
+    helpers: {
+        sortable: (field, sort) => {
+            const sortType = field === sort.column ? sort.type : 'default';
+
+            const icons = {
+                default: 'bx bxs-sort-alt',
+                asc: 'bx bx-sort-up',
+                desc: 'bx bx-sort-down',
+            };
+
+            const icon = icons[sortType];
+
+            //=====
+
+            const types = {
+                default: 'desc',
+                asc: 'desc',
+                desc: 'asc',
+            };
+
+            const type = types[sortType];
+
+            const address = Handlebars.escapeExpression(
+                `?_sort&column=${field}&type=${type}`,
+            );
+
+            const output = `
+                <a href="${address}" class="text-decoration-none">
+                <i class="${icon}" style="transform: translateY(2px)"></i>
+                </a>
+            `;
+
+            return new Handlebars.SafeString(output);
+        },
+    },
 });
 
 app.engine('.hbs', hbs.engine);
