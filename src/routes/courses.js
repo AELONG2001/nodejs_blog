@@ -1,9 +1,9 @@
-const path = require('path');
 const express = require('express');
 const router = express.Router();
 const courseController = require('../app/controllers/CourseController');
-const multer = require('multer');
-const upload = multer({ dest: path.resolve(__dirname, '../public/uploads') });
+// const path = require('path');
+// const upload = multer({ dest: path.resolve(__dirname, '../public/uploads') });
+const upload = require('../util/configCloudinary');
 
 router.get('/create', courseController.create);
 router.post('/store', upload.single('file_course'), courseController.store);

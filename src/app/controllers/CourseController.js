@@ -20,9 +20,11 @@ class CourseControllers {
 
     // [POST] /courses/store
     store(req, res, next) {
-        var formData = req.body;
-        req.body.file_course = req.file.path.split('\\').slice(8).join('/');
-        const course = new Course(formData);
+        // req.body.file_course = req.file.path.split('\\').slice(8).join('/');
+
+        req.body.file_course = req.file.path;
+
+        const course = new Course(req.body);
         course
             .save()
             .then(() => res.redirect('/me/stored/courses'))
@@ -42,9 +44,9 @@ class CourseControllers {
 
     //[PUT] /courses/:id
     update(req, res, next) {
-        var formData = req.body;
-        req.body.file_course = req.file.path.split('\\').slice(8).join('/');
-        Course.updateOne({ _id: req.params.id }, formData)
+        // req.body.file_course = req.file.path.split('\\').slice(8).join('/');
+        req.body.file_course = req.file.path;
+        Course.updateOne({ _id: req.params.id }, req.body)
             .then(() => res.redirect('/me/stored/courses'))
             .catch(next);
     }
