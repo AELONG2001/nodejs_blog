@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
+const Handlebars = require('Handlebars');
 const route = require('./routes');
 
 const sortMiddleware = require('./app/middleware/SortMiddleware');
