@@ -1,4 +1,7 @@
 @import './Abstracts/variable';
+@import './layout/header';
+@import './layout/container';
+@import './layout/footer';
 @import './Components/card-course';
 @import './Components/navbar';
 @import './Components/user-avatar';
@@ -6,3 +9,4 @@
 @import './Components/stored-courses';
 @import './Components/table';
 @import './Components/banner';
+@import './Components/founder-f8';

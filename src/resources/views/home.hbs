@@ -1,5 +1,43 @@
 <div class="container-content">
-  <div class="row">
+  <div class="row mt-5">
+    <div class="col-4">
+      <div class="card__information text-center">
+          <img src="/img/people.png" class="card__information-img" alt="">
+          <div class="d-flex justify-content-center mt-4">
+            <span class="card__information-amount">124.425+</span>
+            <div class="card__information-desc">người đã tham gia</div>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="card__information text-center">
+          <img src="/img/courses.png" class="card__information-img" alt="">
+          <div class="d-flex justify-content-center mt-4">
+            <span class="card__information-amount">9+</span>
+            <div class="card__information-desc">khóa học dành cho bạn</div>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="card__information text-center">
+          <img src="/img/advantage.png" class="card__information-img" alt="">
+          <div class="d-flex justify-content-center mt-4">
+            <div class="card__information-desc">Học bất cứ nơi nào, bất cứ nơi đâu</div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+      <div class="card-course-heading text-center">
+        <h2>Khóa học nổi bật</h2>
+        <div class="d-flex justify-content-center">
+          <span>124.425+</span>
+          <p>người đã học và hàng nghìn trang web đã được tạo ra mỗi tháng</p>
+        </div>
+      </div>
       {{#each courses}}
         <div class="col-sm-6 col-lg-4">
             <div class="card mt-4" style="height: 400px">
@@ -16,5 +54,9 @@
               </div>
         </div>
       {{/each}}
+      <div class="text-center mt-4">
+          <button class="button_concept">Xem tất cả</button>
+      </div>
   </div>
+
 </div>

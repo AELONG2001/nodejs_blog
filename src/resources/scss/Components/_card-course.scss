@@ -1,4 +1,22 @@
 .card-course {
+    &-heading {
+        & h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+        & div {
+            padding: 16px 0;
+            & span {
+                font-size: 18px;
+                font-weight: 500;
+            }
+            & p {
+                font-size: 18px;
+                margin: 0 0 0 4px;
+            }
+        }
+    }
     &-description {
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -14,4 +32,27 @@
     width: 354px;
     height: 200px;
     object-fit: cover;
+}
+
+.card__information {
+    margin-top: 80px;
+    text-align: center;
+    &-img {
+        width: 76px;
+    }
+    &-amount {
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 600;
+        background-image: linear-gradient(90deg, #0cb7d1, #32b47c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: translateY(-1px);
+    }
+    &-desc {
+        font-size: 20px;
+        font-weight: 600;
+        color: $color-black;
+        margin-left: 4px;
+    }
 }
