@@ -1,20 +1,37 @@
-.navbar-nav {
-    &-list {
-        transform: translate(20px, 4px);
-    }
-    &-link {
-        font-size: 18px;
-        color: #fff !important;
-        &__dropdown {
-            color: #fff;
-            text-decoration: none;
-            &:hover {
-                opacity: 0.9;
-                color: #f3ebeb !important;
-            }
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    height: $navbar-height;
+    transition: all 0.2s linear;
+    .navbar-nav {
+        &-list {
+            transform: translate(20px, 4px);
         }
-        &:hover {
-            color: #e6d9d9 !important;
+        &-item {
+            list-style: none;
+            padding: 0 20px;
+        }
+        &-link {
+            font-family: 'PT Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff !important;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            &__dropdown {
+                color: #fff;
+                text-decoration: none;
+                &:hover {
+                    opacity: 0.9;
+                    color: #f3ebeb !important;
+                }
+            }
+            &:hover {
+                color: #e6d9d9 !important;
+            }
         }
     }
 }

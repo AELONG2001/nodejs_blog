@@ -21,9 +21,7 @@ class CourseControllers {
     // [POST] /courses/store
     store(req, res, next) {
         // req.body.file_course = req.file.path.split('\\').slice(8).join('/');
-
         req.body.file_course = req.file.path;
-
         const course = new Course(req.body);
         course
             .save()

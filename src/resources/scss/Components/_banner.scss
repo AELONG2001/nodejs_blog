@@ -1,0 +1,46 @@
+.banner {
+    position: relative;
+    &__video {
+        width: 100%;
+        &-content {
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            z-index: 2;
+            &-heading {
+                color: $color-white;
+                font-family: Montserrat;
+                font-size: 48px;
+                line-height: 1.8;
+                font-weight: 700;
+            }
+            &-desc {
+                color: $color-white;
+                font-size: 21px;
+            }
+            &-btn {
+                font-family: Montserrat;
+                font-size: 16px;
+                font-weight: 600;
+                color: $color-white;
+                background-color: #f05123;
+                padding: 8px 40px;
+                border-radius: 24px;
+                text-transform: uppercase;
+                margin-top: 20px;
+                &:hover {
+                    color: rgba(255, 255, 255, 0.8);
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}

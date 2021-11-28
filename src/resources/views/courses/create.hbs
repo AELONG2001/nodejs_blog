@@ -1,9 +1,10 @@
 <div class="mt-4">
     <h3>Đăng Khóa Học</h3>
-    <form method="POST" action="/courses/store" enctype="multipart/form-data">
+    <form  method="POST" action="/courses/store" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="name" class="form-label">Tên khóa học</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <label for="validationCustom03" class="form-label">Tên khóa học</label>
+            <input type="text" class="form-control" id="validationCustom03" name="name" required>
+           
         </div>
 
          <div class="mb-3">
@@ -13,7 +14,7 @@
 
          <div class="mb-3">
             <label for="image" class="form-label">Tải lên ảnh của khóa học</label>
-            <input type="file" class="form-control" id="file_course" name="file_course">
+            <input type="file" class="form-control" id="file_course" name="file_course" required>
         </div>
 
          <div class="mb-3">
