@@ -1,3 +1,7 @@
+.App {
+  overflow: hidden;
+}
+
 footer {
   width: 100%;
   margin-top: 50px;
@@ -101,12 +105,27 @@ footer .footer_content-btn {
   height: 52px;
   transition: all 0.2s linear;
 }
+.navbar_logo-img {
+  height: 32px;
+  transform: translateY(-3px);
+}
 .navbar .navbar-nav-list {
-  transform: translate(20px, 4px);
+  transform: translateX(28px);
 }
 .navbar .navbar-nav-item {
   list-style: none;
   padding: 0 20px;
+}
+.navbar .navbar-nav-item-authentication {
+  list-style: none;
+  padding: 0 16px;
+}
+.navbar .navbar-nav-item-authentication a {
+  color: #fff;
+  font-family: "PT Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
 }
 .navbar .navbar-nav-link {
   font-family: "PT Sans", sans-serif;
@@ -126,6 +145,10 @@ footer .footer_content-btn {
 }
 .navbar .navbar-nav-link:hover {
   color: #e6d9d9 !important;
+}
+
+.active.navbar {
+  background-color: #000;
 }
 
 .user-avatar {

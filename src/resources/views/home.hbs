@@ -1,62 +1,111 @@
 <div class="container-content">
-  <div class="row mt-5">
-    <div class="col-4">
-      <div class="card__information text-center">
-          <img src="/img/people.png" class="card__information-img" alt="">
-          <div class="d-flex justify-content-center mt-4">
-            <span class="card__information-amount">124.425+</span>
-            <div class="card__information-desc">người đã tham gia</div>
-          </div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="card__information text-center">
-          <img src="/img/courses.png" class="card__information-img" alt="">
-          <div class="d-flex justify-content-center mt-4">
-            <span class="card__information-amount">9+</span>
-            <div class="card__information-desc">khóa học dành cho bạn</div>
-          </div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="card__information text-center">
-          <img src="/img/advantage.png" class="card__information-img" alt="">
-          <div class="d-flex justify-content-center mt-4">
-            <div class="card__information-desc">Học bất cứ nơi nào, bất cứ nơi đâu</div>
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-      <div class="card-course-heading text-center">
-        <h2>Khóa học nổi bật</h2>
-        <div class="d-flex justify-content-center">
-          <span>124.425+</span>
-          <p>người đã học và hàng nghìn trang web đã được tạo ra mỗi tháng</p>
+   <div class="banner">
+        <video class="banner__video" autoplay muted loop style="z-index: -1;">
+          <source src="/video/home-backdrop.mp4" type="video/mp4">
+        </video>
+        <div class="banner__overlay"></div>
+        <div class="banner__content">
+          <h1 class="banner__content-heading">Học lập trình để đi làm!</h1>
+          <p class="banner__content-desc">Trở thành lập trình viên nhà tuyển dụng luôn săn đón</p>
+          <button class="button_concept">Học Ngay</button>
         </div>
-      </div>
-      {{#each courses}}
-        <div class="col-sm-6 col-lg-4">
-            <div class="card mt-4" style="height: 400px">
-              <a href="/courses/{{this.slug}}" class="card-course-link">
-                <img src="{{this.file_course}}" class="card-img-top" alt="{{this.name}}">
-              </a>
-                <div class="card-body">
-                  <a href="/courses/{{this.slug}}" class="card-course-link">
-                    <h5 class="card-title">{{this.name}}</h5>
-                  </a>
-                  <p class="card-text card-course-description">{{this.description}}</p>
-                  <a href="#" class="btn btn-primary">Đăng Ký Ngay</a>
-                </div>
+     </div>
+
+     <div class="container">
+        <div class="row mt-5">
+        <div class="col-4">
+          <div class="card__information text-center">
+              <img src="/img/people.png" class="card__information-img" alt="">
+              <div class="d-flex justify-content-center mt-4">
+                <span class="card__information-amount">124.425+</span>
+                <div class="card__information-desc">người đã tham gia</div>
               </div>
+          </div>
         </div>
-      {{/each}}
-      <div class="text-center mt-4">
-          <button class="button_concept">Xem tất cả</button>
-      </div>
-  </div>
 
+        <div class="col-4">
+          <div class="card__information text-center">
+              <img src="/img/courses.png" class="card__information-img" alt="">
+              <div class="d-flex justify-content-center mt-4">
+                <span class="card__information-amount">9+</span>
+                <div class="card__information-desc">khóa học dành cho bạn</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card__information text-center">
+              <img src="/img/advantage.png" class="card__information-img" alt="">
+              <div class="d-flex justify-content-center mt-4">
+                <div class="card__information-desc">Học bất cứ nơi nào, bất cứ nơi đâu</div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+          <div class="card-course-heading text-center">
+            <h2>Khóa học nổi bật</h2>
+            <div class="d-flex justify-content-center">
+              <span>124.425+</span>
+              <p>người đã học và hàng nghìn trang web đã được tạo ra mỗi tháng</p>
+            </div>
+          </div>
+          {{#each courses}}
+            <div class="col-sm-6 col-lg-4">
+                <div class="card mt-4" style="height: 400px">
+                  <a href="/courses/{{this.slug}}" class="card-course-link">
+                    <img src="{{this.file_course}}" class="card-img-top" alt="{{this.name}}">
+                  </a>
+                    <div class="card-body">
+                      <a href="/courses/{{this.slug}}" class="card-course-link">
+                        <h5 class="card-title">{{this.name}}</h5>
+                      </a>
+                      <p class="card-text card-course-description">{{this.description}}</p>
+                      <a href="#" class="btn btn-primary">Đăng Ký Ngay</a>
+                    </div>
+                  </div>
+            </div>
+          {{/each}}
+          <div class="text-center mt-4">
+              <button class="button_concept">Xem tất cả</button>
+          </div>
+      </div>
+     </div>
+
+      <div class="row">
+        <div class="banner__transform">
+           <div class="banner__content">
+              <h1 class="banner__content-heading">124.425+ người khác đã học. Còn bạn?</h1>
+              <div class="text-center">
+                 <p class="banner__content-desc">"Đừng học lập trình.Nghiện đấy!</p>
+                 <button class="button_concept">Thử một lần</button>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container founder_f8-container">
+         <div class="row align-items-center">
+          <div class="col-6">
+            <div class="founder_f8">
+              <img src="/img/founder.jpg" alt="founder f8" class="founder_f8-image">
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="founder_f8-description ms-5">
+              <blockquote>
+                  "... tôi làm việc bất kể ngày nghỉ, ngày lễ. Ở
+                  bất cứ đâu tôi có thể đặt chiếc máy tính của
+                  mình và tôi LUÔN TIN rằng tôi sẽ tạo ra được
+                  những sản phẩm tuyệt vời để CHIA SẺ với cộng
+                  đồng, đó là mục tiêu tôi luôn theo đuổi ..."
+              </blockquote>
+              <div class="mt-3">– Founder F8 –</div>
+              <button class="button_concept founder_f8-btn">Tìm hiểu thêm</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>

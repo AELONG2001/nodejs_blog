@@ -6,13 +6,28 @@
     z-index: 10;
     height: $navbar-height;
     transition: all 0.2s linear;
+    &_logo-img {
+        height: 32px;
+        transform: translateY(-3px);
+    }
     .navbar-nav {
         &-list {
-            transform: translate(20px, 4px);
+            transform: translateX(28px);
         }
         &-item {
             list-style: none;
             padding: 0 20px;
+            &-authentication {
+                list-style: none;
+                padding: 0 16px;
+                & a {
+                    color: $color-white;
+                    font-family: 'PT Sans', sans-serif;
+                    font-size: 15px;
+                    font-weight: 700;
+                    text-decoration: none;
+                }
+            }
         }
         &-link {
             font-family: 'PT Sans', sans-serif;
@@ -34,4 +49,8 @@
             }
         }
     }
+}
+
+.active.navbar {
+    background-color: $color-black;
 }

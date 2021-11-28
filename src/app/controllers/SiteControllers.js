@@ -12,9 +12,22 @@ class SiteControllers {
             .catch(next);
     }
 
-    // [GET] /search
-    search(req, res) {
-        res.render('search');
+    // [GET] /my-course
+    myCourse(req, res, next) {
+        Course.find({})
+            .then((courses) => {
+                res.render('my-course', {
+                    courses: multipleMongooseToObject(courses),
+                });
+            })
+            .catch(next);
+    }
+
+    //[GET] /login
+    logIn(req, res, next) {
+        res.render('home', {
+            url: req.url,
+        });
     }
 }
 

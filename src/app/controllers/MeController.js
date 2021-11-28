@@ -6,12 +6,12 @@ class MeController {
         Promise.all([
             Course.find({}).sortable(req),
             Course.countDocumentsDeleted(),
-        ]).then(([courses, deletedCount]) =>
+        ]).then(([courses, deletedCount]) => {
             res.render('me/stored_courses', {
                 deletedCount,
                 courses: multipleMongooseToObject(courses),
-            }),
-        );
+            });
+        });
     }
 
     // [GET] /me/trash/courses
