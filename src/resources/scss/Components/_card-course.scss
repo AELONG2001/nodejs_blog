@@ -94,7 +94,7 @@
 .show__course {
     &-achievement {
         & h3 {
-            margin-top: 20px;
+            margin-top: 40px;
         }
         &-list {
             padding-left: 0;
@@ -116,6 +116,10 @@
             }
             & div {
                 padding-left: 10px;
+                & span {
+                    color: $color-black;
+                    font-weight: 500;
+                }
             }
         }
     }
