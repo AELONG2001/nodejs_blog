@@ -198,6 +198,69 @@ footer .footer_content-row .footer_content-btn {
   }
 }
 
+.show__course-achievement h3 {
+  margin-top: 20px;
+}
+.show__course-achievement-list {
+  padding-left: 0;
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.show__course-achievement-item {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.show__course-achievement-item svg {
+  color: #f05123;
+  width: 14px;
+  height: 14px;
+}
+.show__course-achievement-item div {
+  padding-left: 10px;
+}
+.show__course-free {
+  font-size: 28px;
+  font-weight: 400;
+  color: #f05123;
+}
+.show__course-btn {
+  display: flex;
+  margin: auto;
+  text-decoration: none;
+  margin-top: 20px !important;
+  width: 200px;
+}
+.show__course-list {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  padding-left: 0;
+  list-style: none;
+}
+.show__course-item {
+  position: relative;
+  color: #494949;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  margin-bottom: 14px;
+}
+.show__course-item svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+}
+.show__course-item div {
+  font-size: 14px;
+  line-height: 16px;
+}
+
 .navbar {
   position: fixed;
   top: 0;
