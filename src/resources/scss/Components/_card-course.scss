@@ -116,10 +116,11 @@
             }
             & div {
                 padding-left: 10px;
-                & span {
+                & .course_info-filed {
                     color: $color-black;
                     font-size: 16px;
                     font-weight: 500;
+                    padding: 0 2px;
                 }
             }
         }
