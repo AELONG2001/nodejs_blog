@@ -2,6 +2,19 @@
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #918f8f;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .App {
   overflow: hidden;
 }
