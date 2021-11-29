@@ -24,7 +24,7 @@
             line-height: 1.8;
             font-weight: 700;
             @include respond(mobileTablet) {
-                font-size: 36px;
+                font-size: 32px;
             }
         }
         &-desc {

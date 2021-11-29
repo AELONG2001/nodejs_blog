@@ -76,11 +76,11 @@ footer .footer_content-row .footer_content-input {
   margin: a;
 }
 footer .footer_content-row .footer_content-btn {
-  min-width: 60px;
+  width: 132px;
   font-size: 15px;
   padding: 7px 20px;
-  margin-top: 10px;
   background-color: #b80257;
+  margin: 10px auto;
 }
 @media (max-width: 63.9875em) {
   footer .footer_content-row .footer_content-btn {
@@ -436,7 +436,7 @@ footer .footer_content-row .footer_content-btn {
 }
 @media (max-width: 63.9875em) {
   .banner__content-heading {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 .banner__content-desc {
