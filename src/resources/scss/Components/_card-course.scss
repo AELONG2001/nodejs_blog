@@ -92,6 +92,22 @@
 
 //show course
 .show__course {
+    &-row {
+        @include respond(mobileTablet) {
+            flex-direction: column-reverse;
+        }
+    }
+    &-col:nth-child(2) {
+        margin-bottom: 80px;
+        @include respond(mobileTablet) {
+            .card {
+                width: 100% !important;
+            }
+            & iframe {
+                width: 100% !important;
+            }
+        }
+    }
     &-achievement {
         & h3 {
             margin-top: 40px;
@@ -124,12 +140,18 @@
         font-size: 28px;
         font-weight: 400;
         color: #f05123;
+        @include respond(mobileTablet) {
+            font-size: 26px;
+        }
     }
     &-btn {
+        font-size: 14px !important;
         display: flex;
+        justify-content: center;
         margin: auto;
         text-decoration: none;
         margin-top: 20px !important;
+        padding: 10px 0 !important;
         width: 200px;
     }
 
