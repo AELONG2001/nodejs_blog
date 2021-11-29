@@ -2,39 +2,74 @@ footer {
     width: 100%;
     margin-top: 50px;
     background-color: $color-black;
-    .footer_content {
-        &-heading {
-            font-size: 22px;
-            color: $color-white;
-            font-weight: 500;
-        }
-        & ul {
-            padding-left: 0;
-            list-style: none;
-            & li {
-                color: hsla(0, 0%, 100%, 0.7);
-                font-size: 16px;
-                line-height: 22px;
-                padding: 6px 0;
-            }
-        }
-        &-input {
+    .footer_content-row {
+        @include respond(mobileTablet) {
             width: 100%;
-            height: 40px;
-            background: #272727;
-            border: none;
-            font-size: 16px;
-            line-height: 1.15;
-            border-radius: 20px;
-            padding: 0 20px;
-            margin: 25px 0 10px;
-            color: hsla(0, 0%, 100%, 0.6);
-            outline: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
         }
-        &-btn {
-            font-size: 15px;
-            padding: 7px 20px;
-            background-color: #b80257;
+        .footer_content {
+            @include respond(mobileTablet) {
+                text-align: center;
+                padding: 28px 0;
+            }
+            &-heading {
+                font-size: 22px;
+                color: $color-white;
+                font-weight: 500;
+                &-fix {
+                    margin: 10px 20px;
+                    @include respond(mobileTablet) {
+                        margin: 0 !important;
+                    }
+                }
+            }
+            & ul {
+                padding-left: 0;
+                list-style: none;
+                & li {
+                    color: hsla(0, 0%, 100%, 0.7);
+                    font-size: 16px;
+                    line-height: 22px;
+                    padding: 6px 0;
+                    @include respond(mobile) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &-list {
+                margin: 0 20px;
+                @include respond(mobileTablet) {
+                    margin: 0;
+                }
+            }
+
+            &-input {
+                width: 240px;
+                height: 40px;
+                font-size: 16px;
+                background: #272727;
+                border: none;
+                line-height: 1.15;
+                border-radius: 20px;
+                padding: 0 20px;
+                margin: auto;
+                color: hsla(0, 0%, 100%, 0.6);
+                margin: a;
+            }
+            &-btn {
+                min-width: 60px;
+                font-size: 15px;
+                padding: 7px 20px;
+                margin-top: 10px;
+                background-color: #b80257;
+                @include respond(mobileTablet) {
+                    margin: 16px auto;
+                }
+            }
         }
     }
 }

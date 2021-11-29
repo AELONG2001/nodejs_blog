@@ -3,7 +3,6 @@
     <a href="/">
       <img src="/img/logo.png" alt="logo_f8" class="navbar_logo-img">
     </a>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 navbar-nav-list">
         <li class="nav-item navbar-nav-item">
@@ -18,7 +17,7 @@
         </li>
       </ul>
 
-      <ul class="nav justify-content-center ms-auto">
+      <ul class="nav justify-content-center ms-auto dropdown_list">
         {{#if url}}
           <li class="navbar-nav-item-authentication">
             <a href="/">Đăng nhập</a>
@@ -28,22 +27,78 @@
           <li class="nav-item dropdown nav-item-dropdown">
             <a class="dropdown-toggle navbar-nav-link__dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="/img/logo_f8.png" class="user-avatar">
-              Admin
+              Long Nguyễn
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/courses/create">Đăng khóa học</a></li>
-              <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item btn-logout" href="/login">Đăng Xuất</a></li>
+              <li class="dropdown-item">
+                <a class="dropdown-link" href="/courses/create">
+                  <i class="fas fa-bookmark"></i>
+                  Đăng khóa học
+                </a>
+              </li>
+
+              <li class="dropdown-item">
+                <a class="dropdown-link" href="/me/stored/courses">
+                 <i class="fas fa-bookmark"></i>
+                 Khóa học của tôi
+                </a>
+              </li>
+              <li class="dropdown-item">
+                <a class="dropdown-link btn-logout" href="/login">
+                 <i class="fas fa-sign-out-alt"></i>
+                  Đăng Xuất
+                </a>
+              </li>
             </ul>
           </li>
-
          {{/if}}
+         
       </ul>
     </div>
+
+    <button class="btn-icon-nav">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
 </nav>
+
+<div class="user__dropdown">
+  <div class="user__dropdown-account">
+    <img src="/img/logo_f8.png" alt="logo_f8">
+    <div class="user__dropdown-account-name">Long Nguyễn</div>
+    <i class="fas fa-times user__dropdown-account-close"></i>
+  </div>
+
+  <ul class="user__dropdown-list">
+    <li class="user__dropdown-item">
+      <a href="" class="user__dropdown-link">
+      <i class="fas fa-home"></i>
+        <span>Trang chủ</span>
+      </a>
+    </li>
+
+    <li class="user__dropdown-item">
+      <a href="" class="user__dropdown-link">
+      <i class="fas fa-bookmark"></i>
+        <span>Đăng khóa học</span>
+      </a>
+    </li>
+
+    <li class="user__dropdown-item">
+      <a href="" class="user__dropdown-link">
+      <i class="fas fa-book"></i>
+        <span>Khóc học của tôi</span>
+      </a>
+    </li>
+
+    <li class="user__dropdown-item">
+      <a href="" class="user__dropdown-link">
+        <i class="fas fa-sign-out-alt"></i>
+        <span> Đăng xuất</span>
+      </a>
+    </li>
+  </ul>
+</div>
 
 
 <script>
@@ -53,6 +108,9 @@
         const btnPlus = document.querySelector('.btn-add-icon')
         const btnUndo = document.querySelector('.btn-undo')
         const btnCreate = document.querySelector('.btn-create')
+        const btnIconNav = document.querySelector('.btn-icon-nav')
+        const userDropDown = document.querySelector('.user__dropdown')
+        const btnClose = document.querySelector('.user__dropdown-account-close')
        
 
         if(btnPlus || btnUndo || btnCreate) {
@@ -68,6 +126,14 @@
             }
           })
         }
+
+        btnIconNav.addEventListener('click', () => {
+          userDropDown.style.display = 'block'
+        })
+
+        btnClose.addEventListener('click', () => {
+          userDropDown.style.display = 'none'
+        })
 
   
       })

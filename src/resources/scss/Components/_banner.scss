@@ -2,22 +2,37 @@
     position: relative;
     &__video {
         width: 100%;
+        height: 100vh;
+        object-fit: cover;
     }
     &__content {
         position: absolute;
         top: 30%;
         left: 10%;
         z-index: 2;
+        @include respond(mobileTablet) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
         &-heading {
             color: $color-white;
             font-family: Montserrat;
             font-size: 48px;
             line-height: 1.8;
             font-weight: 700;
+            @include respond(mobileTablet) {
+                font-size: 36px;
+            }
         }
         &-desc {
             color: $color-white;
             font-size: 21px;
+            @include respond(mobileTablet) {
+                font-size: 18px;
+            }
         }
     }
     &__overlay {
@@ -49,9 +64,15 @@
             transform: translate(-50%, -50%);
             &-heading {
                 font-size: 32px;
+                @include respond(mobile) {
+                    font-size: 18px;
+                }
             }
             &-desc {
                 font-size: 18px;
+                @include respond(mobile) {
+                    font-size: 16px;
+                }
             }
         }
     }

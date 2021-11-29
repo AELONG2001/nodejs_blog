@@ -35,4 +35,24 @@
         color: rgba(255, 255, 255, 0.9);
         opacity: 0.9;
     }
+
+    @include respond(mobile) {
+        font-size: 12px;
+        padding: 10px;
+        margin-top: 6px;
+    }
+}
+
+.btn-icon-nav {
+    display: none;
+    @include respond(mobileTablet) {
+        display: block;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        & i {
+            font-size: 24px;
+            color: $color-white;
+        }
+    }
 }
