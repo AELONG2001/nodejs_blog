@@ -41,6 +41,11 @@
         &:hover {
             background-color: rgba(22, 24, 35, 0.05);
         }
+        &__my-course {
+            @include respond(mobile) {
+                display: none;
+            }
+        }
     }
     &-link {
         text-decoration: none;

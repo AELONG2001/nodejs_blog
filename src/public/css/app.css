@@ -6,6 +6,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 46.1875em) {
+  .container__my-course {
+    display: none;
+  }
+}
+
 footer {
   width: 100%;
   margin-top: 50px;
@@ -291,6 +297,11 @@ footer .footer_content-row .footer_content-btn {
 }
 .user__dropdown-item:hover {
   background-color: rgba(22, 24, 35, 0.05);
+}
+@media (max-width: 46.1875em) {
+  .user__dropdown-item__my-course {
+    display: none;
+  }
 }
 .user__dropdown-link {
   text-decoration: none;

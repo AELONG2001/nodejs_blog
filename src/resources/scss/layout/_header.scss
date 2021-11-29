@@ -5,3 +5,9 @@
 .App {
     overflow: hidden;
 }
+
+.container__my-course {
+    @include respond(mobile) {
+        display: none;
+    }
+}
